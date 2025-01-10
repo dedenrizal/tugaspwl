@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
 
 class UserController extends Controller
 {
@@ -20,15 +22,38 @@ class UserController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:6',
+            'password' => 'nullable|string|min:6', // Make password nullable
             'role' => 'required|string',
         ]);
 
-        $validated['password'] = Hash::make($validated['password']);
+
+        $plainPassword = $validated['password'] ?? Str::random(8);
+
+        $validated['password'] = Hash::make($plainPassword);
 
         $user = User::create($validated);
-        return response()->json($user, 201);
+
+        return response()->json([
+            'user' => $user,
+            'plain_password' => $plainPassword,
+            'message' => 'Your password is ' . $plainPassword, // Including plain password before hashing
+        ], 201);
     }
+
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        $userName = $user->name;
+
+
+        $user->delete();
+
+        return response()->json(['message' => "User ${userName} deleted successfully"], 200);
+    }
+
+
+
+
 
     public function edit($id)
     {
@@ -52,14 +77,8 @@ class UserController extends Controller
         }
 
         $user->update($validated);
-        return response()->json($user);
-    }
 
-    public function destroy($id_user)
-    {
-        $user = User::findOrFail($id_user);
-        $user->delete();
-        return redirect()->route('users.index')->with('success', 'User deleted successfully');
+        return response()->json($user);
     }
 
 

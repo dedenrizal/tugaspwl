@@ -9,14 +9,13 @@
         <p class="text-xl mb-4">Selamat datang, {{ Auth::user()->nama }}!</p>
         @switch(Auth::user()->role)
             @case('Pemilik')
-            {{-- tinggal branch update --}}
                 <p>Anda memiliki akses penuh.</p>
                 <a href="{{ route('users.index') }}" class="text-blue-500 hover:underline">Kelola Pengguna</a>
                 <a href="{{ route('branches.index') }}" class="ml-4 text-blue-500 hover:underline">Kelola Cabang</a>
                 <a href="{{ route('warehouse-stocks.index') }}" class="ml-4 text-blue-500 hover:underline">Cek Stok Gudang</a>
             @break
             @case('Manajer')
-            {{-- tidak bisa input data user --}}
+            {{-- tidak bisa update data user --}}
                 <p>Berikut laporan transaksi Anda.</p>
                 <a href="{{ route('users.index') }}" class="text-blue-500 hover:underline">Kelola Pengguna</a>
                 <a href="{{route('transaction.show')}}" class="text-blue-500 hover:underline">Lihat Laporan</a>
@@ -33,6 +32,7 @@
             @break
             @case('Pegawai Gudang')
                 <p>Berikut log stok Anda.</p>
+                {{-- problem in this --}}
                 <a href="{{ route('warehouse-stocks.index') }}" class="text-blue-500 hover:underline">Stok Gudang</a>
                 <a href="{{ route('stock-logs.index') }}" class="ml-4 text-blue-500 hover:underline">Log Stok</a>
             @break

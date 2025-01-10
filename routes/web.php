@@ -33,6 +33,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('transactions', TransactionController::class);
     Route::resource('warehouse-stocks', WarehouseStockController::class);
 
+    Route::post('warehouse-stocks/store',[ WarehouseStockController::class,'store'])->name('warehouse-stock.store');
+
     Route::get('transactions/show', [TransactionController::class, 'show'])->name('transaction.show');
 
     Route::delete('/branches/destroy/{id_cabang}', [BranchController::class, 'destroy'])->name('branch.destroy');
@@ -40,7 +42,9 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/branch/update/{id_branch}', [BranchController::class, 'update'])->name('branch.update');
 
     Route::delete('/users/destroy/{id_user}', [UserController::class, 'destroy'])->name('user.destroy');
-    Route::delete('/users/store', [UserController::class, 'store'])->name('user.store');
+    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
     Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
-    Route::put('/users/update/{id_user}', [UserController::class, 'update'])->name('user.update');
+    Route::put('/users/update/{id}', [UserController::class, 'update'])->name('user.update');
+
+    // Route::get('print-report', [PrintController::class, 'printReport'])->name('print-report');
 });

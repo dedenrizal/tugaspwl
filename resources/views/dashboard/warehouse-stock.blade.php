@@ -12,7 +12,7 @@
             @break
 
         @case('Pegawai Gudang')
-        <form action="{{ route('warehouse-stocks.store') }}" method="POST" class="mb-4">
+        <form action="{{ route('warehouse-stock.store') }}" method="POST" class="mb-12">
             @csrf
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <div>

@@ -2,7 +2,7 @@
     <x-slot name="title">
         Our Users
     </x-slot>
-    <form action="{{ route('user.update', ['id_user' => $user->id_user]) }}" method="POST" class="mb-4">
+    <form action="{{ route('user.update', ['id' => $user->id_user]) }}" method="POST" class="mb-4">
         @csrf
         @method('PUT')
 

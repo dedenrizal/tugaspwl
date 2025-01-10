@@ -20,15 +20,31 @@ class WarehouseStockController extends Controller
 
     public function store(Request $request)
     {
+        // Validate the request
         $validated = $request->validate([
             'id_cabang' => 'required|exists:branches,id_cabang',
             'id_barang' => 'required|exists:products,id_barang',
             'stok' => 'required|integer',
         ]);
 
-        $stock = WarehouseStock::create($validated);
+
+        $stock = WarehouseStock::where('id_cabang', $validated['id_cabang'])
+                                ->where('id_barang', $validated['id_barang'])
+                                ->first();
+
+        if ($stock) {
+
+            $stock->stok += $validated['stok'];
+            $stock->save();
+        } else {
+
+            $stock = WarehouseStock::create($validated);
+        }
+
         return response()->json($stock, 201);
     }
+
+
 
     public function show($id)
     {

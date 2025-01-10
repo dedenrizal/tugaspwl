@@ -30,7 +30,7 @@
             @break
 
             @case('Manajer')
-                <form action="{{ route('users.store') }}" method="POST" class="mb-4">
+                <form action="{{ route('user.store') }}" method="POST" class="mb-4">
                     @csrf
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <div>
@@ -76,9 +76,7 @@
                                 <td class="py-2 px-4 border-b">{{ $user->email }}</td>
                                 <td class="py-2 px-4 border-b">{{ $user->role }}</td>
                                 <td class="py-2 px-4 border-b">
-                                    <a href="{{ route('user.edit', ['user' => $user->id_user]) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded">
-                                        Edit
-                                    </a>
+
 
                                     <form action="{{ route('user.destroy', ['id_user' => $user->id_user]) }}" method="POST" class="inline-block">
                                         @csrf

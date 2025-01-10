@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "artisan-serve": "vite"
+        "wanlusi": "vite"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",

@@ -35,6 +35,5 @@
         });
         @endphp
         <p>Penjualan kita saat ini Rp. {{ number_format($totalKeuntungan, 1) }}</p>
-
     </table>
 </x-layout>

@@ -54,10 +54,10 @@ class DatabaseSeeder extends Seeder
             ['id_cabang' => 1, 'id_barang' => 3, 'jumlah' => 150],
             ['id_cabang' => 2, 'id_barang' => 1, 'jumlah' => 100],
             ['id_cabang' => 2, 'id_barang' => 2, 'jumlah' => 200],
-            ['id_cabang' => 2, 'id_barang' => 3, 'jumlah' => 159],
+            ['id_cabang' => 2, 'id_barang' => 3, 'jumlah' => 150],
             ['id_cabang' => 3, 'id_barang' => 1, 'jumlah' => 100],
             ['id_cabang' => 3, 'id_barang' => 2, 'jumlah' => 200],
-            ['id_cabang' => 3, 'id_barang' => 3, 'jumlah' => 161],
+            ['id_cabang' => 3, 'id_barang' => 3, 'jumlah' => 150],
         ]);
 
         // Seeder untuk tabel Stock_Logs

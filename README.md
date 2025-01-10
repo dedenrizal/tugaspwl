@@ -9,8 +9,8 @@ Selamat datang di **Laravel Odyssey**, di mana petualangan pengembangan PHP Anda
 - **Middleware Guardian**: Lindungi rute Anda dengan middleware yang kuat, memastikan perjalanan yang aman dan lancar.
 
 ## 🛠️ Instalasi:
-1. **Klon Repository**: `git clone https://github.com/yourusername/laravel-odyssey.git`
-2. **Masuk ke Direktori**: `cd laravel-odyssey`
+1. **Klon Repository**: `git clone https://github.com/dedenrizal/tugaspwl`
+2. **Masuk ke Direktori**: `cd tugaspwl`
 3. **Instal Dependencies**: `composer install`
 4. **Atur Lingkungan Anda**: Salin `.env.example` ke `.env` dan perbarui pengaturannya.
 5. **Hasilkan Kunci Aplikasi**: `php artisan key:generate`

@@ -1,6 +1,10 @@
 # 🚀 Laravel Odyssey: Sebuah Perjalanan Melampaui Framework 🌌
 
 Selamat datang di **Laravel Odyssey**, di mana petualangan pengembangan PHP Anda dimulai! Mulailah perjalanan melalui kosmos sintaks yang elegan, perintah artisan, dan migrasi database yang mulus. Misi kita: untuk berani mengode di mana pun developer belum pernah pergi sebelumnya.
+- **di buat oleh dan di desain oleh**
+- 1. M Alfarizi (blade)
+  2. ridwan (model eloquen)
+  3. deden (routing)
 
 ## 🌟 Fitur:
 - **Artisan Commander**: Manfaatkan kekuatan CLI Laravel untuk eksekusi perintah yang cepat dan efisien.
